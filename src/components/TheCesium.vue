@@ -1,13 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import {
-  TileMapServiceImageryProvider,
-  Viewer,
-  Cesium3DTileset,
-  Ion,
-  Cartesian3,
-  HeadingPitchRange,
-} from 'cesium'
+import { Viewer, Cesium3DTileset, Ion, Cartesian3, HeadingPitchRange } from 'cesium'
 import 'cesium/Build/CesiumUnminified/Widgets/widgets.css'
 
 // Create ref to refernce the HTML element
@@ -15,9 +8,6 @@ const viewerDivRef = ref()
 
 // Set default token to Private Token
 Ion.defaultAccessToken = import.meta.env.VITE_MAP_TOKEN
-
-// Set building URL
-window.CESIUM_BASE_URL = 'node_modules/cesium/Build/CesiumUnminified/'
 
 //  Loaded Textures when Mounted
 onMounted(async () => {
@@ -34,11 +24,7 @@ onMounted(async () => {
     selectionIndicator: false,
     timeline: false,
     navigationHelpButton: false,
-    navigationInstructionsInitiallyVisible: false,
-    imageryProvider: new TileMapServiceImageryProvider({
-      // Load the map image from this location
-      url: 'node_modules/cesium/Build/CesiumUnminified/Assets/Textures/NaturalEarthII'
-    })
+    navigationInstructionsInitiallyVisible: false
   })
 
   // Add Google 3D tileset
