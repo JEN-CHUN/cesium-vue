@@ -1,6 +1,15 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import { Viewer, Cesium3DTileset, Ion, Cartesian3, HeadingPitchRange } from 'cesium'
+import {
+  Viewer,
+  Cesium3DTileset,
+  Ion,
+  Cartesian3,
+  HeadingPitchRange,
+  Color,
+  LabelStyle,
+  NearFarScalar
+} from 'cesium'
 import 'cesium/Build/CesiumUnminified/Widgets/widgets.css'
 
 // Create ref to refernce the HTML element
@@ -32,6 +41,17 @@ onMounted(async () => {
 
   let target = Cartesian3.fromDegrees(121.564468, 25.033964, 350) //Taipei 101 Location
   let offset = new HeadingPitchRange(-82.7, 0, 1000)
+  viewer.entities.add({
+    position: Cartesian3.fromDegrees(121.564468, 25.033964, 600), // 這裡是你的建物的經緯度和高度
+    label: {
+      text: '台北101', // 這裡是你的建物的名字
+      fillColor: Color.BLACK, // 字體顏色
+      backgroundColor: Color.WHITE, // 背景顏色
+      showBackground: true, // 是否顯示背景顏色
+      style: LabelStyle.FILL, // label樣式
+      outlineWidth: 2,
+    }
+  })
 
   viewer.camera.lookAt(target, offset)
 })
