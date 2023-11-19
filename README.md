@@ -25,7 +25,7 @@
 
 ## 加入 3D tileset
 
-因想展示台北101與其周邊的景觀，因此必須找出能夠將地形與建築3D化的建模，在詳閱官方教學後，找到了內建的"Google Photorealistic 3D Tiles"，利用 viewer.scene.primitives.add(await Cesium3DTileset.fromIonAssetId(2275207))將其渲染至畫面上。
+由於想展示台北101與其周邊的景觀，因此必須找出能夠將地形與建築3D化的建模，在詳閱官方教學後，找到了內建的"Google Photorealistic 3D Tiles"，利用 viewer.scene.primitives.add(await Cesium3DTileset.fromIonAssetId(2275207))將其渲染至畫面上。
 
 ## 加入建物標籤
 
