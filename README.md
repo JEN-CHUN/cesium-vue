@@ -4,10 +4,6 @@
 
 透過設定指定的座標，將視角固定在台北101的外觀與周圍的環境。
 
-<!-- ## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin). -->
-
 ## 隱藏預設的介面
 
 由於單純展示建物與周圍的場景不需要使用到預設介面，故將預設的按鈕與羅盤隱藏起來。
@@ -19,12 +15,6 @@
 <br>
 <img src="./md-image/after-icon.png" alt="隱藏預設介面之後" width="350">
 
-<!-- ## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup -->
-
 ## 初探Cesium與設計思路
 
 截至目前為止，這是我第一次接觸到這個函式庫，因此我決定以類似建商角度出發，我的思考方式是以「如果建商要在3D地圖上展示自己的建案，該怎麼做」的角度去思考
@@ -33,29 +23,10 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 第二、建商一定希望渲染的時候，立刻移動要指定的角度與指定的位置，所以我在渲染之後立刻使用lookAt()鎖定特定的座標，鏡頭也會以該位置為中心點旋轉。
 
+## 加入 3D tileset
+
+因想展示台北101與其周邊的景觀，因此必須找出能夠將地形與建築3D化的建模，在詳閱官方教學後，找到了內建的"Google Photorealistic 3D Tiles"，利用 viewer.scene.primitives.add(await Cesium3DTileset.fromIonAssetId(2275207))將其渲染至畫面上。
+
 ## 加入建物標籤
 
 雖然鏡頭與角度皆鎖定在指定的位置，但是為了讓使用者能夠更清楚的判斷出建物以及熟悉其名稱，因此採用entities.add方法在建物上方建立了一個標籤以標示其名稱。
-
-<!--
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-``` -->
