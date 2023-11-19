@@ -42,13 +42,13 @@ onMounted(async () => {
   let target = Cartesian3.fromDegrees(121.564468, 25.033964, 350) //Taipei 101 Location
   let offset = new HeadingPitchRange(-82.7, 0, 1000)
   viewer.entities.add({
-    position: Cartesian3.fromDegrees(121.564468, 25.033964, 600), // 這裡是你的建物的經緯度和高度
+    position: Cartesian3.fromDegrees(121.564468, 25.033964, 600), // The location of the building
     label: {
-      text: '台北101', // 這裡是你的建物的名字
-      fillColor: Color.BLACK, // 字體顏色
-      backgroundColor: Color.WHITE, // 背景顏色
-      showBackground: true, // 是否顯示背景顏色
-      style: LabelStyle.FILL, // label樣式
+      text: '台北101', // The Name of the location
+      fillColor: Color.BLACK, // Font color 
+      backgroundColor: Color.WHITE, // Background color
+      showBackground: true, // Show Background Color
+      style: LabelStyle.FILL, // Label Style
       outlineWidth: 2,
     }
   })
