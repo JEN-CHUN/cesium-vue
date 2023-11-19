@@ -7,10 +7,8 @@ import {
   Cartesian3,
   HeadingPitchRange,
   Color,
-  LabelStyle,
-  NearFarScalar
+  LabelStyle
 } from 'cesium'
-import 'cesium/Build/CesiumUnminified/Widgets/widgets.css'
 
 // Create ref to refernce the HTML element
 const viewerDivRef = ref()
@@ -45,11 +43,11 @@ onMounted(async () => {
     position: Cartesian3.fromDegrees(121.564468, 25.033964, 600), // The location of the building
     label: {
       text: '台北101', // The Name of the location
-      fillColor: Color.BLACK, // Font color 
+      fillColor: Color.BLACK, // Font color
       backgroundColor: Color.WHITE, // Background color
       showBackground: true, // Show Background Color
       style: LabelStyle.FILL, // Label Style
-      outlineWidth: 2,
+      outlineWidth: 2
     }
   })
 
